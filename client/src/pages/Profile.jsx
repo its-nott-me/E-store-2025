@@ -174,7 +174,7 @@ const SecurityTab = () => {
       toast.success('Password updated successfully')
     } catch (error) {
       toast.error('Failed to update password')
-      console.error(error)
+      // console.error(error)
     } finally {
       setLoading(false)
     }

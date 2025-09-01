@@ -15,13 +15,6 @@ const ProductCard = ({ product }) => {
     e.preventDefault()
     addToCart(product._id)
   }
-  console.log(product);
-
-  // const handleWishlist = (e) => {
-  //   e.preventDefault()
-  //   setIsWishlisted(!isWishlisted)
-  //   toast.success(isWishlisted ? 'Removed from wishlist' : 'Added to wishlist')
-  // }
 
   const discount = product.comparePrice 
     ? Math.round(((product.comparePrice - product.price) / product.comparePrice) * 100)
@@ -56,18 +49,6 @@ const ProductCard = ({ product }) => {
                 -{discount}%
               </div>
             )}
-
-            {/* Wishlist Button */}
-            {/* <button
-              onClick={handleWishlist}
-              className="absolute top-2 right-2 p-2 bg-white rounded-full shadow-md hover:shadow-lg transition-shadow"
-            >
-              {isWishlisted ? (
-                <HeartSolidIcon className="h-5 w-5 text-red-500" />
-              ) : (
-                <HeartIcon className="h-5 w-5 text-gray-600" />
-              )}
-            </button> */}
 
             {/* Quick Add to Cart */}
             <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-70 text-white p-4 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">

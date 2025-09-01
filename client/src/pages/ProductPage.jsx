@@ -15,7 +15,6 @@ const ProductPage = () => {
   const { addToCart } = useCart()
   const [selectedImage, setSelectedImage] = useState(0)
   const [quantity, setQuantity] = useState(1)
-  // const [isWishlisted, setIsWishlisted] = useState(false)
 
   if (isLoading) return <Loader fullScreen />
   if (error) return <div>Error loading product</div>
@@ -25,11 +24,6 @@ const ProductPage = () => {
   const handleAddToCart = () => {
     addToCart(product._id, quantity)
   }
-
-  // const handleWishlist = () => {
-  //   setIsWishlisted(!isWishlisted)
-  //   toast.success(isWishlisted ? 'Removed from wishlist' : 'Added to wishlist')
-  // }
 
   return (
     <div className="min-h-screen py-12 px-4">
@@ -152,16 +146,6 @@ const ProductPage = () => {
                 >
                   {product.stock === 0 ? 'Out of Stock' : 'Add to Cart'}
                 </button>
-                {/* <button
-                  onClick={handleWishlist}
-                  className="p-3 border rounded-lg hover:bg-gray-50"
-                >
-                  {isWishlisted ? (
-                    <HeartIcon className="h-6 w-6 text-red-500" />
-                  ) : (
-                    <HeartOutline className="h-6 w-6 text-gray-600" />
-                  )}
-                </button> */}
               </div>
             </div>
 
