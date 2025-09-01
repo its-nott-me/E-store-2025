@@ -55,7 +55,15 @@ const ProductModal = ({ isOpen, onClose, product }) => {
         tags: '',
       })
     }
+
+    setImages([]);
   }, [product, reset])
+
+  useEffect(() => {
+  if (!isOpen) {
+    setImages([]);
+  }
+  }, [isOpen])
 
   const createMutation = useMutation({
     mutationFn: adminService.createProduct,
